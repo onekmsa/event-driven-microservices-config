@@ -1,0 +1,7 @@
+.DS_Store
+*.war
+*application-docker*.properties
+*.zip
+*.class
+*.jar
+logs/
