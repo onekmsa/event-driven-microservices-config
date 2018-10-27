@@ -1,0 +1,23 @@
+spring:
+  data:
+    mongodb:
+      host: cai-security-mongodb
+      username: user
+      password: ${MONGODB_PASSWORD}
+      database: eodessa
+      port: 27017
+
+server:
+  context-path: /uaa
+  port: 5000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://cai-discovery:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: false
+  instance:
+    instance-id: ${spring.application.name}_${random.int}:${server.port}
+    preferIpAddress: false
+    hostname: cai-security

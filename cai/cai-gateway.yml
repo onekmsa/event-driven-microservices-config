@@ -1,0 +1,26 @@
+ribbon:
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
+
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+
+  routes:
+    cai-security:
+        path: /uaa/**
+        url: http://cai-security:5000
+        stripPrefix: false
+        sensitiveHeaders:
+
+    cai-account:
+        path: /accounts/**
+        serviceId: account-service
+        stripPrefix: false
+        sensitiveHeaders:
+
+
+server:
+  port: 4000
