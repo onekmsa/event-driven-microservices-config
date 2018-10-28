@@ -1,7 +1,3 @@
-ribbon:
-  ReadTimeout: 20000
-  ConnectTimeout: 20000
-
 zuul:
   ignoredServices: '*'
   host:
@@ -17,7 +13,7 @@ zuul:
 
     cai-account:
         path: /accounts/**
-        serviceId: account-service
+        serviceId: cai-account
         stripPrefix: false
         sensitiveHeaders:
 
